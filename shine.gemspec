@@ -14,4 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = "shine"
   gem.require_paths = ["lib"]
   gem.version       = Shine::VERSION
+
+  gem.add_dependency "tactful_tokenizer"
+  gem.add_dependency "classifier"
 end
