@@ -1,4 +1,4 @@
-# Shine
+# Shiner
 
 Extract the most interesting sentences from an article.
 
@@ -6,7 +6,7 @@ Extract the most interesting sentences from an article.
 
 Add this line to your application's Gemfile:
 
-    gem 'shine'
+    gem 'shiner'
 
 And then execute:
 
@@ -14,10 +14,10 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install shine
+    $ gem install shiner
 
 ## Usage
 
-    require 'shine'
-    Shine.shine(string, :max_length => 500)
+    require 'shiner'
+    Shiner.shine(string, :max_length => 500)
 

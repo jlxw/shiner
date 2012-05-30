@@ -1,4 +1,4 @@
-#require "shine/version"
+#require "shiner/version"
 
 require 'rubygems'
 require 'bundler/setup'
@@ -7,7 +7,7 @@ require 'pp'
 require 'tactful_tokenizer'
 require 'classifier'
 
-module Shine
+module Shiner
   def self.shine(string, options={:max_length => 188})
     best = string_to_best_sentences(string, options)
     best[:sentences].collect{|sentence| sentence[:sentence]}.join(' ')

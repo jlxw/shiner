@@ -1,3 +1,3 @@
-module Shine
+module Shiner
   VERSION = "0.0.1"
 end

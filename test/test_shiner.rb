@@ -1,9 +1,9 @@
 require 'test/unit'
-require 'shine'
+require 'shiner'
 #require 'active_support/testing/assertions'
 
 
-class ShineTest < Test::Unit::TestCase
+class ShinerTest < Test::Unit::TestCase
   def test_truth
     doc = <<-EOF
 Facebook shares have dipped below $29 for the first time since their flotation to a new low.
@@ -41,23 +41,23 @@ The share sale in New York raised $16bn for Facebook.
 
 Recent reports suggested that Facebook is to launch its own smartphone by next year.
 EOF
-    result = Shine.shine(doc, :max_length => 388)
+    result = Shiner.shine(doc, :max_length => 388)
     pp [result, result.size]
     assert result.size > 100
     assert result.size < 388
-    result = Shine.shine(doc, :max_length => 888)
+    result = Shiner.shine(doc, :max_length => 888)
     pp [result, result.size]
     assert result.size > 100
     assert result.size < 888
-    result = Shine.shine(doc, :max_length => 1888)
+    result = Shiner.shine(doc, :max_length => 1888)
     pp [result, result.size]
     assert result.size > 100
     assert result.size < 1888
-    result = Shine.shine(doc, :max_sentences => 1)
+    result = Shiner.shine(doc, :max_sentences => 1)
     pp [result, result.size]
-    result = Shine.shine(doc, :max_sentences => 2)
+    result = Shiner.shine(doc, :max_sentences => 2)
     pp [result, result.size]
-    result = Shine.shine(doc, :max_sentences => 3)
+    result = Shiner.shine(doc, :max_sentences => 3)
     pp [result, result.size]
   end
 end
