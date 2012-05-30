@@ -20,7 +20,7 @@ module Shiner
     sentences.each_index{|index|
       batch={:sentences => sentences[index, options[:max_sentences]]}
       batch[:sentences].pop while options[:max_length] && batch[:sentences].collect{|sentence| sentence[:sentence]}.join(' ').length > options[:max_length]
-      batch[:score] = batch[:sentences].collect{|sentence| sentence[:score]}.sum
+      batch[:score] = batch[:sentences].collect{|sentence| sentence[:score]}.sum.to_f / batch[:sentences].size
       batches << batch
     }
     best = batches.sort_by{|batch| batch[:score]}.last
@@ -31,7 +31,7 @@ module Shiner
     string_to_sentences(string).each{ |sentence|
       classifications = classifier.classifications(sentence)
       sentences << {:sentence => sentence, :classifications => classifications, 
-        :score => (classifications['Interesting'] - classifications['Uninteresting']) / (-classifications['Uninteresting']) }
+        :score => 1 - classifications['Interesting'] / classifications['Uninteresting'] }
     }
     #sentences = sentences.sort_by{|sentence| sentence[:score] }
     sentences
