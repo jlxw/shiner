@@ -2,11 +2,11 @@
 require File.expand_path('../lib/shine/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Jason Ling"]
+  gem.authors       = ["Jason Ling Xiaowei"]
   gem.email         = ["jason@jeyel.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = 'Extract the most interesting sentences from an article.'
+  gem.summary       = 'Extract the most interesting sentences from an article.'
+  gem.homepage      = "https://github.com/jlxw/shine"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

@@ -1,0 +1,4 @@
+curl http://dumps.wikimedia.org/simplewikiquote/latest/simplewikiquote-latest-pages-articles.xml.bz2 | bunzip2 | grep "^\* " | grep "[\[\]{}]" -Pv | sed "s/^\\* //" > interesting.txt
+
+curl http://dumps.wikimedia.org/simplewiktionary/latest/simplewiktionary-latest-pages-articles.xml.bz2 | bunzip2 | grep "^\# " | grep "[\[\]{}]" -Pv | sed "s/^\\* //" > uninteresting.txt
+
