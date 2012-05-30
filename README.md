@@ -1,6 +1,6 @@
 # Shine
 
-TODO: Write a gem description
+Extract the most interesting sentences from an article.
 
 ## Installation
 
