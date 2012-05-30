@@ -21,6 +21,7 @@ module Shiner
       next if options[:max_length] && batch[:sentences].collect{|sentence| sentence[:sentence]}.join(' ').length < options[:max_length] && batches.size > 0 #don't take last few sentences if they do not meet max_length
       next if options[:max_sentences] && batch[:sentences].size < options[:max_sentences] && batches.size > 0 #don't take last few sentences if they do not meet max_sentences
       batch[:sentences].pop while options[:max_length] && batch[:sentences].collect{|sentence| sentence[:sentence]}.join(' ').length > options[:max_length]
+      next if batch[:sentences].empty?
       batch[:score] = batch[:sentences].collect{|sentence| sentence[:score]}.sum.to_f / batch[:sentences].size
       batches << batch
     }
