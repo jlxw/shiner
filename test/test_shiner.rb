@@ -43,15 +43,15 @@ Recent reports suggested that Facebook is to launch its own smartphone by next y
 EOF
     result = Shiner.shine(doc, :max_length => 388)
     pp [result, result.size]
-    assert result.size > 100
+    assert result.size > 200
     assert result.size < 388
     result = Shiner.shine(doc, :max_length => 888)
     pp [result, result.size]
-    assert result.size > 100
+    assert result.size > 400
     assert result.size < 888
     result = Shiner.shine(doc, :max_length => 1888)
     pp [result, result.size]
-    assert result.size > 100
+    assert result.size > 1000
     assert result.size < 1888
     result = Shiner.shine(doc, :max_sentences => 1)
     pp [result, result.size]
