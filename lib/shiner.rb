@@ -10,7 +10,7 @@ require 'classifier'
 module Shiner
   def self.shine(string, options={:max_length => 188})
     best = string_to_best_sentences(string, options)
-    best[:sentences].collect{|sentence| sentence[:sentence]}.join(' ')
+    best[:sentences].collect{|sentence| sentence[:sentence]}.join(' ') if best
   end
   
   def self.string_to_best_sentences(string, options={})
