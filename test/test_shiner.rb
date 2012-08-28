@@ -8,7 +8,7 @@ class ShinerTest < Test::Unit::TestCase
     doc = <<-EOF
 Facebook shares have dipped below $29 for the first time since their flotation to a new low.
 
-The shares were launched at $38 less than two weeks ago during its high-profile flotation, which valued the firm at $104bn (£66bn).
+The shares were launched at $38 less than two weeks ago during its high-profile flotation, which valued the firm at $104bn (66bn).
 
 Since then, Facebook's shares have lost almost a quarter of their value.
 

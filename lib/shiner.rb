@@ -10,7 +10,7 @@ require 'classifier'
 module Shiner
   def self.shine(string, options={:max_length => 188})
     best = string_to_best_sentences(string, options)
-    best[:sentences].collect{|sentence| sentence[:sentence]}.join(' ') if best
+    best ? best[:sentences].collect{|sentence| sentence[:sentence]}.join(' ') : ''
   end
   
   def self.string_to_best_sentences(string, options={})
@@ -32,6 +32,7 @@ module Shiner
     sentences=[]
     string_to_sentences(string).each{ |sentence|
       classifications = classifier.classifications(sentence)
+      next if classifications['Uninteresting']==0
       sentences << {:sentence => sentence, :classifications => classifications, 
         :score => 1 - classifications['Interesting'] / classifications['Uninteresting'] }
     }
@@ -53,6 +54,7 @@ module Shiner
   end
   
   def self.string_to_sentences(string)
+    return [] unless string
     @tactful_tokenizer ||= TactfulTokenizer::Model.new
     @tactful_tokenizer.tokenize_text(string)
   end
